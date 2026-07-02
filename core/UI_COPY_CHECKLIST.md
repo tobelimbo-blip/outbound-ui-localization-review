@@ -1,0 +1,25 @@
+# UI Copy Checklist
+
+Use the component type to decide what information belongs in the copy. Clarity takes priority over brevity whenever shortening could hide a condition, consequence, status distinction, or recovery step.
+
+| Component | What to check | Common problems | Good UI copy principles | Prioritize clarity over brevity when... |
+|---|---|---|---|---|
+| Button | Action, object, outcome, enabled state, and whether the action is destructive or irreversible | Vague labels such as “Confirm” without an object; noun-only actions; labels that promise the wrong result | Start with a specific verb; match the resulting action; keep the label short and distinct from nearby actions | The action charges money, submits data, cancels a booking, deletes content, or cannot be undone |
+| Tab | Category name, parallel structure, distinction from sibling tabs, and available width | Sentence-length labels; mixed nouns and verbs; overlapping categories; internal terminology | Use short, recognizable category labels; keep sibling labels grammatically parallel | A shorter label would blur materially different states, account types, or trip categories |
+| Status tag | Exact state, lifecycle stage, tense, and distinction from adjacent statuses | Mixing action and status; ambiguous “Processing”; confusing scheduled, pending, authorized, paid, settled, or completed states | Use a stable, domain-appropriate status term; avoid extra words; keep color from carrying meaning alone | Similar states have different user consequences or require different next actions |
+| Empty state | Why content is absent, whether the state is expected, and the next available action | Generic “No data”; implying nothing exists when data may not sync; missing recovery action | Use a concise title plus helpful context or action when needed; name the missing object | The absence may result from filters, permissions, sync limits, booking channels, or an error |
+| Error message | What failed, what remains safe, cause if useful, recovery action, and persistence | Blaming the user; codes without explanation; “Something went wrong” with no recovery path; promising success | State the problem plainly; preserve user confidence without hiding impact; give the next action | Money, saved work, identity, bookings, or retry behavior could be misunderstood |
+| Form label | Exact data requested, unit, required state, format, and relationship to helper text | Placeholder used as the only label; internal field names; labels that include long instructions | Use a persistent noun phrase; keep rules and examples in helper text; mark required fields consistently | The field has legal identity, currency, date, country, eligibility, or irreversible submission implications |
+| Helper text | Constraint, format, example, reason, or consequence that helps completion | Repeating the label; hiding required rules; vague examples; long policy copy | Add only actionable context; put the most important constraint first; use examples that match accepted input | Omitting a threshold, fee, format, timing rule, or data-use consequence could cause failure or dispute |
+| Modal | Decision, consequence, scope, primary and secondary actions, and safe dismissal | Generic titles; duplicate button labels; hidden irreversible effects; dense paragraphs | Lead with the decision; summarize the consequence; use explicit action labels; keep focus order clear | The decision changes money, access, booking status, account status, or stored data |
+| Toast | Outcome, affected object, persistence, and whether another action is required | Reporting success before completion; vague “Done”; long text that disappears too quickly | Confirm the actual result in one short sentence; include an action only if it remains usable | The operation is pending, partially complete, failed silently, or requires immediate recovery |
+| Table column | Data meaning, unit, scope, sort behavior, and distinction from neighboring columns | Truncated internal labels; missing currency or time zone; ambiguous “Amount” or “Status” | Use compact noun phrases; put units in headers when consistent; keep terminology stable across views | Rows can contain different currencies, dates, balance types, owners, or operational states |
+| Tooltip | Additional explanation, trigger accessibility, persistence, and relation to the visible label | Repeating the label; critical information available only on hover; unexplained jargon | Add concise supplementary context; make the trigger discoverable; keep essential information in the main UI | The information affects consent, fees, eligibility, status, or task completion and therefore should not live only in a tooltip |
+
+## Cross-component checks
+
+- Preserve terminology across the same user flow.
+- Do not rely on capitalization, color, or punctuation alone to communicate meaning.
+- Check how variables, dates, amounts, currencies, and names change sentence length.
+- For mobile, test the shortest accurate wording before removing information.
+- For web, do not add explanatory copy merely because more space is available.

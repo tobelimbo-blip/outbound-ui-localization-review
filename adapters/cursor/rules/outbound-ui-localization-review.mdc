@@ -1,0 +1,22 @@
+---
+description: Review, translate, or rewrite outbound UI, slide, marketing, and structured copy from text or readable visual input; excludes OCR infrastructure and final high-risk copy approval.
+globs: []
+alwaysApply: false
+---
+
+# Outbound UI localization review
+
+先判断内容类型，以及 Review、Translation、Rewrite 或对应的 Extract 模式，然后读取并执行：
+
+- `core/REVIEW_FRAMEWORK.md`
+- `core/OUTPUT_FORMAT.md`
+- `core/RISK_RUBRIC.md`
+- `core/UI_COPY_CHECKLIST.md`
+
+航空任务再读取 `core/AIRLINE_GLOSSARY.md`；金融或 Fintech 任务再读取 `core/FINANCE_GLOSSARY.md`。
+
+本项目不提供 OCR 引擎、图片解析器、Figma API 连接器、MCP 配置或外部数据连接。但当前 Agent 能可靠读取用户上传的截图、PPT、Web 页面、App 页面或 Figma frame 图片时，应读取可见文字并继续处理；不要仅因输入是图片而拒绝。无法可靠读取时，请用户提供源文字或更清晰的图片。
+
+默认对中文用户使用中文分析和中文结构标题，推荐 UI、slide 或 product copy 保持目标语言；仅在用户明确要求时切换为英文分析。不要在本规则中复制 core 的完整细则。
+
+不提供最终法律或合规判断，也不从零生成高风险正式文案。
