@@ -1,20 +1,32 @@
 # Agent Instructions
 
-This project is an agent-agnostic localization package for UI, product presentation, marketing, and structured copy.
+This repository is an agent-agnostic localization rules package for outbound UI, product, operation, marketing, and presentation copy.
 
-Before reviewing, translating, or rewriting copy, read:
+Before handling copy, read:
 
 1. `core/REVIEW_FRAMEWORK.md`
 2. `core/OUTPUT_FORMAT.md`
 3. `core/RISK_RUBRIC.md`
-4. `core/UI_COPY_CHECKLIST.md`
+4. `core/GLOSSARY_GENERAL_PRODUCT.md`
 
-For airline-related work, also read `core/AIRLINE_GLOSSARY.md`. For finance or fintech work, also read `core/FINANCE_GLOSSARY.md`.
+For UI tasks, also read `core/UI_COPY_CHECKLIST.md` and `core/GLOSSARY_UI_COMPONENTS.md`. Load only the relevant additional glossary:
 
-First detect the content type and Review, Translation, Rewrite, or corresponding Extract mode. By default, respond to Chinese users with Chinese analysis and Chinese section headings while keeping recommended UI, slide, or product copy in the target language. Switch the analysis and structure to English only when the user explicitly requests it.
+- Operations or marketing: `core/GLOSSARY_OPERATION_MARKETING.md`
+- Airline or travel: `core/GLOSSARY_AIRLINE_TRAVEL.md`
+- Finance or fintech: `core/GLOSSARY_FINANCE_FINTECH.md`
+- E-commerce, membership, or loyalty: `core/GLOSSARY_ECOMMERCE_MEMBERSHIP.md`
+- SaaS or enterprise tools: `core/GLOSSARY_SAAS_ENTERPRISE.md`
 
-This project does not provide an OCR engine, image parser, Figma API connector, MCP setup, or external data connection. If the current agent can reliably read visible text from an uploaded screenshot, PPT, web page image, app screen, or Figma frame image, it must use that capability and continue the requested task. Do not refuse solely because the input is visual. If text is unreadable, cropped, too small, or unsupported by the current environment, ask for source text or a clearer image.
+The default user is a Chinese UX/UI designer; Chinese product managers and operations teams are secondary users. Use Chinese analysis and headings by default, keep recommendations in the target language, and use Global neutral English unless the user specifies another locale or tone.
 
-State what is missing when the intended meaning, component, business condition, or platform constraint cannot be determined; do not invent it. Do not make final legal, compliance, airline operations, banking compliance, or professional localization conclusions. Do not generate final high-risk legal, privacy, consent, payment, refund, fee, eligibility, banking, or airline-operation copy from scratch; use the core placeholder rule when approved source copy is missing or unreadable.
+Detect content type and select Compact, Delivery, Field Translation Table, Localization Review Table, Full Review, Extract + Translate, Extract + Review, or clearer-input handling. Keep outputs delivery-oriented: copy should be ready for Figma, PPT, product documents, string tables, or development handoff.
 
-Use `core/OUTPUT_FORMAT.md` for the response and `core/RISK_RUBRIC.md` for problem types and priorities.
+Use `字段级翻译表` for Chinese-only source translation and label the explanation `翻译说明`; include `需确认项` only where needed. Use `本地化检查表` and `修改原因` only when current English exists and is being reviewed. Ordinary UI fields should normally use `-` or P3, not inflated P1/P2 ratings.
+
+This package does not provide OCR, image parsing, Figma API, MCP setup, or external connections. If the current Agent can reliably read visible text from an uploaded image, use it and continue. If not, request clearer input rather than guessing.
+
+Do not issue final legal, compliance, airline operations, banking compliance, professional localization, or brand strategy conclusions. Do not generate final high-risk copy from scratch. Use `core/OUTPUT_FORMAT.md` and `core/RISK_RUBRIC.md` for the response.
+
+`core/` is the source of truth. The Codex adapter's `references/` directory is its installable copy; synchronize it after every core change and verify exact equality.
+
+Do not change the default user persona, reduce the package to generic proofreading, merge Field Translation Table Mode with Localization Review Table Mode, force glossary replacements over context, add a parallel rule structure, duplicate glossaries, or expand glossary categories without repeated evidence.

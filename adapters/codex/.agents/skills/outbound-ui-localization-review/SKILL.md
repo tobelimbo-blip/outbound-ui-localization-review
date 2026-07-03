@@ -1,25 +1,36 @@
 ---
 name: outbound-ui-localization-review
-description: Review, translate, or rewrite outbound UI, slide, marketing, and structured copy from supplied text or readable screenshots. Use the host agent's visual capability when available; this package does not provide OCR, Figma API, or MCP setup and does not replace legal or compliance review.
+description: Review, translate, and rewrite Chinese-to-English outbound UI and product copy for overseas products. Use for UI localization, product copy reviews, screenshots, PPT slides, Figma frame images, website screenshots, app UI, string tables, operation copy, marketing copy, empty states, buttons, forms, modals, toasts, status labels, error messages, product proposals, and design reviews across travel, airline, finance, fintech, e-commerce, membership, loyalty, SaaS, enterprise tools, logistics, education, healthcare, creator tools, AI products, and consumer apps. Do not use as OCR, Figma API, MCP setup, legal approval, compliance approval, airline operations approval, banking compliance review, or final brand strategy approval.
 ---
 
 # Outbound UI Localization Review
 
-先判断内容类型，以及 Review、Translation、Rewrite 或对应的 Extract 模式，再按 core 规则执行。
+Review, translate, or rewrite copy already supplied as text or reliably readable in the current Agent's visual input.
 
-## 读取规则
+## Load references
 
-定位项目根目录并读取：
+Always read:
 
-1. `core/REVIEW_FRAMEWORK.md`
-2. `core/OUTPUT_FORMAT.md`
-3. `core/RISK_RUBRIC.md`
-4. `core/UI_COPY_CHECKLIST.md`
+1. `references/REVIEW_FRAMEWORK.md`
+2. `references/OUTPUT_FORMAT.md`
+3. `references/RISK_RUBRIC.md`
+4. `references/GLOSSARY_GENERAL_PRODUCT.md`
 
-航空任务再读取 `core/AIRLINE_GLOSSARY.md`；金融或 Fintech 任务再读取 `core/FINANCE_GLOSSARY.md`。
+For UI screens or components, also read `references/UI_COPY_CHECKLIST.md` and `references/GLOSSARY_UI_COMPONENTS.md`.
 
-本项目不提供 OCR 引擎、图片解析器、Figma API 连接器、MCP 配置或外部数据连接。但当前 Agent 能可靠读取用户上传的截图、PPT、Web 页面、App 页面或 Figma frame 图片时，应读取可见文字并继续处理；不要仅因输入是图片而拒绝。文字看不清、被裁切或当前环境不支持图片读取时，请用户提供源文字或更清晰的图片。
+Load only the relevant additional glossary:
 
-默认对中文用户使用中文分析和中文结构标题，推荐 UI、slide 或 product copy 保持目标语言。用户明确要求英文分析时可以切换为英文。
+- Operations, marketing, campaigns, or landing pages: `references/GLOSSARY_OPERATION_MARKETING.md`
+- Airline or travel: `references/GLOSSARY_AIRLINE_TRAVEL.md`
+- Finance or fintech: `references/GLOSSARY_FINANCE_FINTECH.md`
+- E-commerce, membership, or loyalty: `references/GLOSSARY_ECOMMERCE_MEMBERSHIP.md`
+- SaaS or enterprise tools: `references/GLOSSARY_SAAS_ENTERPRISE.md`
 
-不要在本 adapter 中复制或扩展 core 规则。不要给出最终法律、合规、航司运营、银行合规或专业本地化结论；缺少官方源文案时，不得从零生成高风险正式文案。
+## Apply the framework
+
+- Detect content type and select Compact, Delivery, Field Translation Table, Localization Review Table, Full Review, Extract + Translate, Extract + Review, or clearer-input handling before answering.
+- For Chinese users, default to Chinese analysis while keeping recommended copy in the target product language.
+- Use clear, concise Global neutral English unless the user specifies another locale or tone.
+- If visible screenshot text is readable, use it and continue; if it is not reliable, request clearer input rather than guessing.
+- Preserve usable copy and distinguish errors, risks, improvements, optional polish, and missing context.
+- Never generate final high-risk legal, privacy, consent, payment, refund, eligibility, banking, or airline-operation copy from scratch.

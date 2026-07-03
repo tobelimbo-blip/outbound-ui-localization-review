@@ -1,23 +1,19 @@
 ---
 name: outbound-ui-localization-review
-description: Review, translate, or rewrite outbound UI, slide, marketing, and structured copy from supplied text or readable screenshots. Use the host agent's visual capability when available; this package does not provide OCR, Figma API, or MCP setup and does not replace legal or compliance review.
+description: Review, translate, and rewrite Chinese-to-English outbound UI and product copy for overseas users. Use for UI localization, product copy reviews, screenshots, PPT slides, Figma frame images, website screenshots, app UI, string tables, empty states, buttons, forms, modals, toasts, status labels, error messages, operation copy, marketing copy, product proposals, and design reviews across travel, finance, e-commerce, membership, SaaS, enterprise, logistics, education, healthcare, creator, AI, and consumer products. Do not use as OCR, Figma API or MCP setup, legal or compliance approval, airline operations approval, banking compliance review, or final brand strategy approval.
 ---
 
 # Outbound UI Localization Review
 
-先判断内容类型，以及 Review、Translation、Rewrite 或对应的 Extract 模式，再按 core 规则执行。
+先判断内容类型，再选择 Compact、Delivery、Field Translation Table、Localization Review Table、Full Review、Extract + Translate、Extract + Review 或 clearer-input handling，并按 core 规则执行。
 
-定位项目根目录并读取：
+始终读取：
 
 1. `core/REVIEW_FRAMEWORK.md`
 2. `core/OUTPUT_FORMAT.md`
 3. `core/RISK_RUBRIC.md`
-4. `core/UI_COPY_CHECKLIST.md`
+4. `core/GLOSSARY_GENERAL_PRODUCT.md`
 
-航空任务再读取 `core/AIRLINE_GLOSSARY.md`；金融或 Fintech 任务再读取 `core/FINANCE_GLOSSARY.md`。
+UI 任务再读取 `core/UI_COPY_CHECKLIST.md` 和 `core/GLOSSARY_UI_COMPONENTS.md`。按领域只加载相关的 operation / marketing、airline / travel、finance / fintech、e-commerce / membership 或 SaaS / enterprise glossary。
 
-本项目不提供 OCR 引擎、图片解析器、Figma API 连接器、MCP 配置或外部数据连接。但当前 Agent 能可靠读取用户上传的截图、PPT、Web 页面、App 页面或 Figma frame 图片时，应读取可见文字并继续处理；不要仅因输入是图片而拒绝。文字看不清、被裁切或当前环境不支持图片读取时，请用户提供源文字或更清晰的图片。
-
-默认对中文用户使用中文分析和中文结构标题，推荐 UI、slide 或 product copy 保持目标语言。用户明确要求英文分析时可以切换为英文。
-
-不要在本 adapter 中复制或覆盖 core 规则。不要给出最终法律、合规、航司运营、银行合规或专业本地化结论；缺少官方源文案时，不得从零生成高风险正式文案。
+当前 Agent 能可靠读取截图时，应继续处理；看不清时请求源文字或清晰图片。中文用户默认使用中文分析，推荐文案保持目标语言并使用 Global neutral English。不得从零生成高风险正式文案，也不得给出最终法律、合规、航司运营、银行合规或品牌策略结论。

@@ -1,22 +1,18 @@
 ---
-description: Review, translate, or rewrite outbound UI, slide, marketing, and structured copy from text or readable visual input; excludes OCR infrastructure and final high-risk copy approval.
+description: Review, translate, and rewrite Chinese-to-English outbound UI and product copy from text or readable screenshots, slides, Figma frame images, website and app UI, string tables, operation and marketing copy, product proposals, and design reviews across travel, finance, e-commerce, membership, SaaS, enterprise, logistics, education, healthcare, creator, AI, and consumer products; excludes OCR infrastructure, Figma API or MCP setup, and final legal, compliance, airline, banking, or brand approval.
 globs: []
 alwaysApply: false
 ---
 
-# Outbound UI localization review
+# Outbound UI Localization Review
 
-先判断内容类型，以及 Review、Translation、Rewrite 或对应的 Extract 模式，然后读取并执行：
+先判断内容类型，再选择 Compact、Delivery、Field Translation Table、Localization Review Table、Full Review、Extract + Translate、Extract + Review 或 clearer-input handling，然后读取并执行：
 
 - `core/REVIEW_FRAMEWORK.md`
 - `core/OUTPUT_FORMAT.md`
 - `core/RISK_RUBRIC.md`
-- `core/UI_COPY_CHECKLIST.md`
+- `core/GLOSSARY_GENERAL_PRODUCT.md`
 
-航空任务再读取 `core/AIRLINE_GLOSSARY.md`；金融或 Fintech 任务再读取 `core/FINANCE_GLOSSARY.md`。
+UI 任务再读取 `core/UI_COPY_CHECKLIST.md` 和 `core/GLOSSARY_UI_COMPONENTS.md`。按领域只加载相关 glossary。
 
-本项目不提供 OCR 引擎、图片解析器、Figma API 连接器、MCP 配置或外部数据连接。但当前 Agent 能可靠读取用户上传的截图、PPT、Web 页面、App 页面或 Figma frame 图片时，应读取可见文字并继续处理；不要仅因输入是图片而拒绝。无法可靠读取时，请用户提供源文字或更清晰的图片。
-
-默认对中文用户使用中文分析和中文结构标题，推荐 UI、slide 或 product copy 保持目标语言；仅在用户明确要求时切换为英文分析。不要在本规则中复制 core 的完整细则。
-
-不提供最终法律或合规判断，也不从零生成高风险正式文案。
+当前 Agent 能可靠读取视觉输入时，应继续处理；不能可靠读取时请求更清晰输入。中文用户默认使用中文分析，推荐文案保持目标语言并使用 Global neutral English。不要从零生成高风险正式文案，也不要给出最终法律、合规、航司运营、银行合规或品牌策略判断。
